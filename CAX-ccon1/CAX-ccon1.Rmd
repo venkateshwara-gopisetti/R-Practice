@@ -7,11 +7,84 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 
-```{r}
-plot(cars)sadasdasd
-```
-
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
-sfasdfsdafsd
+```{r}
+library(readr)
+library(plyr)
+library(dplyr)
+library(ggplot2)
+library(caret)
+library(Amelia)
+```
+
+## loading the data 
+
+```{r}
+wd <-getwd()
+spd <- read.csv(paste(wd,"/CAX_Startup_Data.csv",sep=""), header=TRUE, as.is=T)
+```
+
+## data profiling
+
+```{r}
+spd[spd=="No Info"]<- NA
+spd[spd==""]<- NA
+spd$Est..Founding.Date[!is.na(spd$Est..Founding.Date)] <- as.Date(spd$Est..Founding.Date[!is.na(spd$Est..Founding.Date)], "%m/%d/%Y")
+spd$Last.Funding.Date <- as.Date(spd$Last.Funding.Date, "%m/%d/%Y")
+
+
+# noting columns that needs to be converted to numeric
+col<- c(3:5,10,11,18:23,25,61,66,68:70,72,74,88,92,94:96,98,99,102:116)
+
+# using for loop for converting column as numeric
+for(i in col)
+ {
+ spd[,i]<-as.numeric(spd[,i])
+ }
+
+```
+
+##checking for missing data
+
+```{r}
+
+pna<-sapply(spd, function(x) sum(is.na(x)))
+percent_mis<-as.data.frame(round((pna/nrow(spd))*100,1))
+pnb <- sapply(spd , function(x) sum(is.na(x))/length(x))
+dna <- spd[,pna>0]
+missmap(dna)
+name<-row.names(percent_mis)
+pcnt_mis_var<-cbind(name,percent_mis)
+row.names(pcnt_mis_var)<-NULL
+colnames(pcnt_mis_var)<-c("variable","Percent.Missing")
+
+
+```
+
+## filtering data
+```{r}
+# keeping only variables with less than 40% missing
+new_var<-
+as.character(pcnt_mis_var$variable[which(pcnt_mis_var$Percent.Missing<=40)])
+new_startup<-spd[new_var]
+# separate data frame for more than 40% missing
+other_var<-
+as.character(pcnt_mis_var$variable[which(pcnt_mis_var$Percent.Missing>40)])
+other_data<-spd[other_var]
+```
+
+## splitting data based on data type
+```{r}
+# Separate data frame for numeric variables
+cnt_df<-new_startup[,c(3:5,10,12:14,17:22,24,60,65,67:69,71,73,85,89,91:93,
+ 95,96,99:113)]
+# Separate data frame for character variables
+cnt_var<-colnames(cnt_df)
+var <- colnames(spd) %in% cnt_var
+char_df <- spd[!var]
+
+```
+
+

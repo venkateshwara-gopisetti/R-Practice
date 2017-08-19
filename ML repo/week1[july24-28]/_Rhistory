@@ -1,0 +1,253 @@
+dir <- "C:/Users/venkateshwar.gopiset/Documents/ML repo/week1[july24-28]/"
+setwd(dir)
+##-------------------------------------------------
+AP <- TAD[TAD$'STATE/UT' == "Andhra Pradesh",]
+months <- colnames(AP[4:15])
+AP_Road <- AP[(AP$TYPE =="Road Accidents")&(AP$YEAR == 2001),4:15 ]
+t[1]<-unique(AP$YEAR)
+t[2]<-tapply(AP$JANUARY,AP$YEAR,sum)
+t[3]<-tapply(AP$FEBRUARY,AP$YEAR,sum)
+t[4]<-tapply(AP$MARCH,AP$YEAR,sum)
+t[5]<-tapply(AP$APRIL,AP$YEAR,sum)
+t[6]<-tapply(AP$MAY,AP$YEAR,sum)
+t[7]<-tapply(AP$JUNE,AP$YEAR,sum)
+t[8]<-tapply(AP$JULY,AP$YEAR,sum)
+t[9]<-tapply(AP$AUGUST,AP$YEAR,sum)
+t[10]<-tapply(AP$SEPTEMBER,AP$YEAR,sum)
+t[11]<-tapply(AP$OCTOBER,AP$YEAR,sum)
+t[12]<-tapply(AP$NOVEMBER,AP$YEAR,sum)
+t[13]<-tapply(AP$DECEMBER,AP$YEAR,sum)
+TAD <- read.csv("Traffic accidents by month of occurrence 2001-2014.csv")
+months <- colnames(AP[4:15])
+AP_Road <- AP[(AP$TYPE =="Road Accidents")&(AP$YEAR == 2001),4:15 ]
+t[1]<-unique(AP$YEAR)
+t[2]<-tapply(AP$JANUARY,AP$YEAR,sum)
+t[3]<-tapply(AP$FEBRUARY,AP$YEAR,sum)
+t[4]<-tapply(AP$MARCH,AP$YEAR,sum)
+t[5]<-tapply(AP$APRIL,AP$YEAR,sum)
+t[6]<-tapply(AP$MAY,AP$YEAR,sum)
+t[7]<-tapply(AP$JUNE,AP$YEAR,sum)
+t[8]<-tapply(AP$JULY,AP$YEAR,sum)
+t[9]<-tapply(AP$AUGUST,AP$YEAR,sum)
+t[10]<-tapply(AP$SEPTEMBER,AP$YEAR,sum)
+t[11]<-tapply(AP$OCTOBER,AP$YEAR,sum)
+t[12]<-tapply(AP$NOVEMBER,AP$YEAR,sum)
+t[13]<-tapply(AP$DECEMBER,AP$YEAR,sum)
+TAD <- read.csv("Traffic accidents by month of occurrence 2001-2014.csv")
+AP <- TAD[TAD$STATE.UT == "Andhra pradesh",]
+months <- colnames(AP[4:15])
+AP_Road <- AP[(AP$TYPE =="Road Accidents")&(AP$YEAR == 2001),4:15 ]
+t[1]<-unique(AP$YEAR)
+t[2]<-tapply(AP$JANUARY,AP$YEAR,sum)
+t[3]<-tapply(AP$FEBRUARY,AP$YEAR,sum)
+t[4]<-tapply(AP$MARCH,AP$YEAR,sum)
+t[5]<-tapply(AP$APRIL,AP$YEAR,sum)
+t[6]<-tapply(AP$MAY,AP$YEAR,sum)
+t[7]<-tapply(AP$JUNE,AP$YEAR,sum)
+t[8]<-tapply(AP$JULY,AP$YEAR,sum)
+t[9]<-tapply(AP$AUGUST,AP$YEAR,sum)
+t[10]<-tapply(AP$SEPTEMBER,AP$YEAR,sum)
+t[11]<-tapply(AP$OCTOBER,AP$YEAR,sum)
+t[12]<-tapply(AP$NOVEMBER,AP$YEAR,sum)
+t[13]<-tapply(AP$DECEMBER,AP$YEAR,sum)
+months <- colnames(AP[4:15])
+AP_Road <- AP[(AP$TYPE =="Road Accidents")&(AP$YEAR == 2001),4:15 ]
+t[1]<-unique(AP$YEAR)
+AP
+AP <- TAD[TAD$STATE.UT == "Andhra pradesh",]
+AP
+AP <- TAD[TAD$'STATE.UT' == "Andhra pradesh",]
+AP
+AP <- TAD[TAD$'STATE.UT' == "Andhra Pradesh",]
+AP
+months <- colnames(AP[4:15])
+AP_Road <- AP[(AP$TYPE =="Road Accidents")&(AP$YEAR == 2001),4:15 ]
+t[1]<-unique(AP$YEAR)
+t[2]<-tapply(AP$JANUARY,AP$YEAR,sum)
+t[3]<-tapply(AP$FEBRUARY,AP$YEAR,sum)
+t[4]<-tapply(AP$MARCH,AP$YEAR,sum)
+t[5]<-tapply(AP$APRIL,AP$YEAR,sum)
+t[6]<-tapply(AP$MAY,AP$YEAR,sum)
+t[7]<-tapply(AP$JUNE,AP$YEAR,sum)
+t[8]<-tapply(AP$JULY,AP$YEAR,sum)
+t[9]<-tapply(AP$AUGUST,AP$YEAR,sum)
+t[10]<-tapply(AP$SEPTEMBER,AP$YEAR,sum)
+t[11]<-tapply(AP$OCTOBER,AP$YEAR,sum)
+t[12]<-tapply(AP$NOVEMBER,AP$YEAR,sum)
+t[13]<-tapply(AP$DECEMBER,AP$YEAR,sum)
+months <- colnames(AP[4:15])
+AP_Road <- AP[(AP$TYPE =="Road Accidents")&(AP$YEAR == 2001),4:15 ]
+t[1]<-unique(AP$YEAR)
+AP
+AP <- as.matrix(AP)
+t[1]<-unique(AP$YEAR)
+AP
+AP <- TAD[TAD$'STATE.UT' == "Andhra Pradesh",]
+AP
+AP_Road <- AP[(AP$TYPE =="Road Accidents")&(AP$YEAR == 2001),4:15 ]
+AP_Road
+x <- AP_Road
+x
+plot(X)
+plot(x)
+str(x)
+t(x)
+plot(t(x))
+plot(as.list(x))
+AP
+AP$YEAR
+t[1]<-unique(AP$YEAR)
+unique(AP$YEAR)
+t[1]<-unique(AP$YEAR)
+t
+tt
+t <- c()
+t[1]<-unique(AP$YEAR)
+AP <- as.matrix(AP)
+t1<-unique(AP$YEAR)
+t2<-tapply(AP$JANUARY,AP$YEAR,sum)
+t3<-tapply(AP$FEBRUARY,AP$YEAR,sum)
+t4<-tapply(AP$MARCH,AP$YEAR,sum)
+t5<-tapply(AP$APRIL,AP$YEAR,sum)
+t6<-tapply(AP$MAY,AP$YEAR,sum)
+t7<-tapply(AP$JUNE,AP$YEAR,sum)
+t8<-tapply(AP$JULY,AP$YEAR,sum)
+t9<-tapply(AP$AUGUST,AP$YEAR,sum)
+t10<-tapply(AP$SEPTEMBER,AP$YEAR,sum)
+t11<-tapply(AP$OCTOBER,AP$YEAR,sum)
+t12<-tapply(AP$NOVEMBER,AP$YEAR,sum)
+t13<-tapply(AP$DECEMBER,AP$YEAR,sum)
+AP$YEAr
+AP$YEAR
+AP <- TAD[TAD$'STATE.UT' == "Andhra Pradesh",]
+t1<-unique(AP$YEAR)
+t2<-tapply(AP$JANUARY,AP$YEAR,sum)
+t3<-tapply(AP$FEBRUARY,AP$YEAR,sum)
+t4<-tapply(AP$MARCH,AP$YEAR,sum)
+t5<-tapply(AP$APRIL,AP$YEAR,sum)
+t6<-tapply(AP$MAY,AP$YEAR,sum)
+t7<-tapply(AP$JUNE,AP$YEAR,sum)
+t8<-tapply(AP$JULY,AP$YEAR,sum)
+t9<-tapply(AP$AUGUST,AP$YEAR,sum)
+t10<-tapply(AP$SEPTEMBER,AP$YEAR,sum)
+t11<-tapply(AP$OCTOBER,AP$YEAR,sum)
+t12<-tapply(AP$NOVEMBER,AP$YEAR,sum)
+t13<-tapply(AP$DECEMBER,AP$YEAR,sum)
+t
+t1
+t2
+t3
+plot(t2)
+plot(t2,t1)
+plot(names(t2),t2)
+x<-as.array(t$YEAR)
+y<-as.array(t$JANUARY)
+rel=lm(y~x)
+plot(x,y,abline(rel))
+x<-as.array(AP$YEAR)
+y<-as.array(AP$JANUARY)
+rel=lm(y~x)
+plot(x,y,abline(rel))
+t1
+t2
+x=t2
+x=t1
+y=t2
+rel=lm(y~x)
+rel
+plot(x,y,abline(rel))
+x11<-x[1:6]
+y11<-y[1:6]
+rel11<-lm(y11~x11)
+plot(x,y,abline(rel,col='black'))
+lines(x,y,abline(rel11,col='green'))
+x12<-x[1:5]
+y12<-y[1:5]
+rel12<-lm(y12~x12)
+lines(x,y,abline(rel12,col='red'))
+x13<-x[1:7]
+y13<-y[1:7]
+rel13<-lm(y13~x13)
+lines(x,y,abline(rel13,col='blue'))
+r<-c(sum(residuals(rel11)),sum(residuals(rel12)),sum(residuals(rel13)))
+r
+check<-r[which.min(r)]
+which.min(r)
+x11<-x[1:6]
+y11<-y[1:6]
+rel11<-lm(y11~x11)
+plot(x,y,abline(rel,col='black'))
+x13<-x[1:7]
+y13<-y[1:7]
+rel13<-lm(y13~x13)
+lines(x,y,abline(rel13,col='blue'))
+x2<-x[7:12]
+y2<-y[7:12]
+rel2<-lm(y2~x2)
+lines(x2,y2,abline(rel2,col='blue'))
+x23<-x[8:12]
+y23<-y[8:12]
+rel23<-lm(y23~x23)
+lines(x,y,abline(rel23,col='blue'))
+x22<-x[6:12]
+y22<-y[6:12]
+rel22<-lm(y22~x22)
+lines(x,y,abline(rel22,col='red'))
+##----
+x21<-x[7:12]
+y21<-y[7:12]
+rel21<-lm(y21~x21)
+plot(x,y,abline(rel,col='black'))
+lines(x21,y21,abline(rel21,col='green'))
+x22<-x[6:12]
+y22<-y[6:12]
+rel22<-lm(y22~x22)
+lines(x,y,abline(rel22,col='red'))
+x23<-x[8:12]
+y23<-y[8:12]
+rel23<-lm(y23~x23)
+lines(x,y,abline(rel23,col='blue'))
+library(readr)
+rain <- read_csv("~/ML repo/week1[july24-28]/rainfall in india 1901-2015.csv")
+View(rain)
+str(rain)
+plot(rain$JAN)
+plot(rain)
+plot(rain[,3:8])
+plot(rain[,3])
+plot(rain[,3:8])
+unique(rain$SUBDIVISION)
+laksh<-rain[rain$SUBDIVISION == "LAKSHADWEEP",]
+laksh
+?replace
+replace(laksh,is.na(LAKSH),0)
+replace(laksh,is.na(laksh),0)
+laksh <- replace(laksh,is.na(laksh),0)
+x <- laksh$YEAR
+y <- laksh$JAN
+plot(y,x)
+plot(x,y)
+rel <- lm(y~x)
+rel
+plot(x,y,abline(rel))
+a <- as.array(laksh[1,2:13])
+a <- as.array(laksh[,2:13])
+a <- as.array(laksh[1,2])
+laksh
+class(laksh)
+laksh[,2]
+laksh[,2:13]
+a <- as.array(laksh[,2:13])
+laksh[,2:13]
+a<-laksh[,2:13]
+a
+a<-laksh[1,2:13]
+a
+a<-as.array(laksh[1,2:13])
+a
+as.array(a)
+as.list(a)
+as.array(a[1])
+a
+plot(a)
+plot(t(a))

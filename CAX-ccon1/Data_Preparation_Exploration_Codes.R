@@ -1,5 +1,6 @@
-setwd("D:\\CrowdAnalytix\\Contest\\Learning_Contest\\Data Preparation and Exploration\\Contest_Data")
-startup<- read.csv(file="CAX_Startup_Data.csv", header=TRUE,as.is=T)
+#setwd("D:\\CrowdAnalytix\\Contest\\Learning_Contest\\Data Preparation and Exploration\\Contest_Data")
+setwd("E:/R-Practice/Cax-ccon1/")
+startup<- read.csv(file="E:/R-Practice/CAX-ccon1/CAX_Startup_Data.csv", header=TRUE,as.is=T)
 
 # replacing 'No Info' and 'blanks' with NA
 startup[startup=="No Info"]<- NA
@@ -74,8 +75,8 @@ char_df$Local.or.global.player<-toupper(char_df$Local.or.global.player)
 char_df$Local.or.global.player<-trimws(char_df$Local.or.global.player)
 
 # Recoding variable levels
-#char_df$Local.or.global.player[char_df$Local.or.global.player=='LOCAL']<-0
-#char_df$Local.or.global.player[char_df$Local.or.global.player=='GLOBAL']<-1
+char_df$Local.or.global.player[char_df$Local.or.global.player=='LOCAL']<-0
+char_df$Local.or.global.player[char_df$Local.or.global.player=='GLOBAL']<-1
 
 char_df$Local.or.global.player<- as.factor(char_df$Local.or.global.player)
 

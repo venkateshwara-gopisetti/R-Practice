@@ -34,6 +34,7 @@ comb$Embarked[is.na(comb$Embarked)] <- "S"
 
 #adding relatives
 comb$relatives <- comb$Parch+comb$SibSp
+# for()
 
 #converting Survived
 comb$Survived[comb$key=="train"] <- as.numeric(comb$Survived[comb$key=="train"])-1
@@ -61,10 +62,10 @@ for (sex in c("male", "female")) {
 #   geom_bar(aes(fill=factor(Survived)),position="dodge") + labs(title="Survival density per Age for Pclass ") + theme(panel.grid.major = element_line(colour = "black"),panel.grid.minor = element_line(colour = "gray"))
 # 
 # 
-ggplot(comb %>% filter(key=="train"), aes(x=Pclass, y=SLogL)) + geom_jitter(aes(color=Survived)) +
+ggplot(comb %>% filter(key=="train"), aes(x=SLogL, y=Survived)) + geom_jitter(aes(color=Survived)) +
   labs(title="SLogL vs Pclass vs TFreq")
 
-# slogl1 <- comb$SLogL
+ slogl1 <- comb$SLogL
 # slogl2 <- comb$SLogL
 # comb$SLogL <- slogl2
 
@@ -147,14 +148,35 @@ comb$SLogL[comb$Fare>=200] <- comb$SLogL[comb$Fare>=200]+1.1
 
 ################## predictions  #######
 
-linear_model <- lm((as.numeric(Survived)-1)~SLogL,data=comb%>% filter(key=="train"))
+baratrain <- comb[comb$key=="train",c("SLogL","Survived")]
+baratrain$Survived <- as.numeric(baratrain$Survived)-1
+baratest <- comb[comb$key=="test",c("SLogL","Survived")]
+
+
+trControl <- trainControl(method="repeatedcv", number=7, repeats = 5); 
+fms <- formula("Survived ~ SLogL")
+model_m <- train(fms, data = comb %>% filter(key=="train"),
+                 metric="Accuracy", trControl = trControl, method = "knn"); 
+comb$Pred <- predict(model_m, comb)
+print(model_m$results)
+
+
+
+linear_model <- lm(Survived~SLogL,data=baratrain)
 linear_predict <- predict(linear_model,data=comb$SLogL[comb$key=="train"])
 linear_predict <- linear_predict - min(linear_predict)
 linear_predict <- linear_predict/max(linear_predict)
-thold <- 0.6416
+thold <-0.3930461      #0.6416
 filter <- as.numeric(linear_predict>thold)
 x <- comb$Survived[comb$key=="train"]
 
+# test = comb[comb$key=="test",]
+# test_predict <- predict(linear_model, data = test)
+# thold <- 0.4040038
+# filter <- as.numeric(test_l_predict>thold)
+# data <- data.frame(test[,1],filter)
+# colnames(data) <- c('PassengerId','Survived')
+# write.csv(data,file='l_predict3.csv',row.names=FALSE)
 
 
 
